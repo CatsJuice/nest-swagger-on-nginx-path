@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  # ----------------------------------------------------------
+  web:
+    image: nginx
+    container_name: test_nest_swagger_nginx
+    restart: always
+    volumes:
+      - ./.nginx/www/:/www
+      - ./.nginx/conf.d:/etc/nginx/conf.d
+      - ./.nginx/cert/:/cert
+    ports:
+      - 3100:3100
