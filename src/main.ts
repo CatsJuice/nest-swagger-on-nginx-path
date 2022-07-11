@@ -4,8 +4,8 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  // This not works either
-  // app.setGlobalPrefix('api');
+  // Conbine with nginx proxy_pass
+  app.setGlobalPrefix('api');
 
   const config = new DocumentBuilder()
     .setTitle('Cats example')
